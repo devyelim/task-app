@@ -1,0 +1,384 @@
+:root {
+    --header-h: 100px;
+}
+
+* {
+    transition:
+        background-color .2s ease,
+        color .2s ease,
+        box-shadow .2s ease,
+        transform .15s ease;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #f9fafb;
+    color: #111827;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.058);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+p {
+    color: #6b7280;
+    font-size: .85rem;
+}
+
+main {
+    max-width: 1500px;
+    margin: var(--header-h) auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin-top: 3px;
+}
+
+body.dark {
+    background: #111827;
+    color: #e5e7eb;
+}
+
+body.dark .card {
+    background: #1f2937;
+}
+
+body.dark .column {
+    background: #0f172a;
+}
+
+body.dark .column h2 {
+    color: #e5e7eb;
+}
+
+body.dark main {
+    background: #1f2937;
+}
+
+body.dark header {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background: #111827;
+    border-color: #374151;
+    color: #e5e7eb;
+}
+
+body.dark label {
+    color: #9ca3af;
+}
+
+body.dark .btn-ghost:hover {
+    background: rgba(255, 255, 255, .08);
+    color: #e5e7eb;
+}
+
+body.dark .btn-ghost::after {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+body.dark .btn-primary {
+    background: #0190b0;
+    color: #e5e7eb;
+}
+
+body.dark .btn-secondary {
+    background: #121720;
+    color: #e5e7eb;
+}
+
+body.dark .btn-primary:hover {
+    background: #02afd5;
+}
+
+body.dark .btn-secondary:hover {
+    background: #323843;
+}
+
+body.dark .btn-danger {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+body.dark .btn-edit {
+    background: #374151;
+    color: #e5e7eb;
+}
+
+body.dark .btn-delete {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+body.dark .badge-low {
+    background: #606e82;
+    color: #e2e4e8;
+}
+
+body.dark .badge-medium {
+    background: #78350f;
+    color: #fde68a;
+}
+
+body.dark .badge-high {
+    background: #7f1d1d;
+    color: #fecaca;
+}
+
+body.dark .card-edit input,
+body.dark .card-edit textarea,
+body.dark .card-edit select {
+    background: #0f172a;
+    border-color: #1f2937;
+    color: #e5e7eb;
+    margin: 3px 0;
+}
+
+.app-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+}
+
+.header-actions button {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: .4rem .8rem;
+    cursor: pointer;
+}
+
+.header-painel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.column {
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #dbdbdb;
+}
+
+.column h2 {
+    font-size: .85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #6b7280;
+    margin-bottom: 1.2rem;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+}
+
+.card.creating {
+    border: 1px dashed var(--border);
+    background: var(--card-bg);
+    animation: fadeIn 0.2s ease;
+    margin-top: .8rem;
+}
+
+.dark .card.creating {
+    border-color: rgba(255,255,255,0.2);
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .06);
+    margin: 1rem 0;
+    cursor: grab;
+    animation: pulse 0.6s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.card.editing {
+    cursor: default;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.4);
+}
+
+.card-edit {
+    display: none;
+    margin-top: .8rem;
+    gap: .5rem;
+}
+
+.card-edit input,
+.card-edit textarea,
+.card-edit select {
+    width: 100%;
+    font-size: .85rem;
+    padding: .4rem .5rem;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    margin: 3px 0;
+}
+
+.card-body {
+    transition: max-height .25s ease, opacity .2s ease;
+}
+
+.card-title {
+    font-weight: 600;
+    margin: .5rem 0;
+}
+
+.card-date {
+    font-size: .8rem;
+    color: #6b7280;
+}
+
+.card-actions {
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+}
+
+.card-edit-actions {
+    margin-top: .5rem;
+}
+
+.btn-ghost {
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    padding: .3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-ghost:hover {
+    background: rgba(0, 0, 0, .05);
+    color: #111827;
+}
+
+.btn-ghost::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #111827;
+    color: #fff;
+    padding: .25rem .5rem;
+    border-radius: 6px;
+    font-size: .65rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .15s ease;
+}
+
+.btn-ghost:hover::after {
+    opacity: 1;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .45rem .75rem;
+    font-size: .8rem;
+    font-weight: 500;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+}
+
+.btn i {
+    font-size: .9rem;
+}
+
+.btn-primary {
+    background: #1f2937;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #1f2937cc;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+.badge {
+    font-size: .65rem;
+    padding: .25rem .6rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
