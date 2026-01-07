@@ -20,18 +20,18 @@ Permite criar, editar, mover e organizar tarefas de forma fluida, com persistên
 
 Imagem de capa do projeto:
 
-![Task App Cover](public\docs\cover.png)
+![Task App Cover](docs/cover.png)
 
 Demonstração das principais interações:
 
 Criação e edição inline de tarefas  
-![Criando e editando tarefas](public\docs\create-edit.gif)
+![Criando e editando tarefas](docs/create-edit.gif)
 
 Drag and drop com persistência de status  
-![Drag and drop](public\docs\drag-drop.gif)
+![Drag and drop](docs/drag-drop.gif)
 
 Dark mode persistente  
-![Dark mode](public\docs\dark-mode.gif)
+![Dark mode](docs/dark-mode.gif)
 
 ## Funcionalidades
 
